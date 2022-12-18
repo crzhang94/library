@@ -1,4 +1,9 @@
-let myLibrary = [];
+
+
+let myLibrary = [
+    [Cats, Me, 192, Read],
+    [Dogs, You, 100, Not read yet],
+];
 
 function Book(title, author, pages, readStatus) {
     // the constructor...
@@ -10,4 +15,5 @@ function Book(title, author, pages, readStatus) {
 
 function addBookToLibrary() {
   // do stuff here
+  const book = new Book 
 }
