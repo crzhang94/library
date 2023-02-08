@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 header {
@@ -29,14 +28,28 @@ header {
     padding: 5px 10px;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.bookshelf {
+    background: pink;
+    margin: 0px 40px;
+}
+
+.book-card {
+    background: green;
+    width: 10%;
+}
+
 form {
-    display: flex;
+    display: none; /* hiding for now while testing the display "shelf"
+    /*display: flex; /* Change this to "none" to hide, then use JS to update to flex when button is pressed */ 
     flex-direction: column;
     margin: auto;
     padding: 35px 40px;
     gap: 30px;
     width: 400px;
-    border: 2px solid red;
+    border: 4px solid lightblue;
+    border-radius: 5%;
 }
 
 .form-inputs {
@@ -67,4 +80,14 @@ input, select {
 .form-buttons > button {
     font-size: 1.4rem;
     width: 50%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background: lightblue;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding: 0.6rem;
 }
