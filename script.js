@@ -34,29 +34,23 @@ function displayBooks() {
   myLibrary.forEach(myLibrary => {
     // Create a new card on the bookshelf for each book
     const bookCard = document.createElement('div');
-    bookCard.className.add = ('book-card');
+    bookCard.classList.add('book-card');
     bookshelf.appendChild(bookCard);
     // For each book card, add text showing book info
     for (let key in myLibrary) {
       const info = document.createElement('p');
-      info.className.add = ('book-info');
+      info.classList.add('book-info');
       info.textContent = key + ": " + myLibrary[key];
       console.log(key, myLibrary[key]);
       bookCard.appendChild(info);
     }
-
   })
-
-
 
   /* for (let i = 0; i < myLibrary.length; i++) {
     const bookCard = document.createElement('div');
     bookCard.className.add = ('book-card');
     bookshelf.appendChild(bookCard);
   } */
-
-
-
 
 }
 
