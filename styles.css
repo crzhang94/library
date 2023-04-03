@@ -69,7 +69,7 @@ input, select {
     width: 100%;
 }
 
-#title, #author, #pages {
+#form-title, #form-author, #form-pages {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -81,6 +81,7 @@ input, select {
     gap: 10px;
 }
 
+.form-buttons > input,
 .form-buttons > button {
     font-size: 1.4rem;
     width: 50%;

@@ -15,24 +15,34 @@ function Book(title, author, pages, readStatus) {
 }
 
 // Function to store new book objects into library array
-function addBookToLibrary(title, author, pages, readStatus) {
-  const book = new Book(title, author, pages, readStatus);
-  myLibrary.push(book);
+function addBookToLibrary() {
+  let title = document.getElementById("title").value;
+  let author = document.getElementById("author").value;
+  let pages = document.getElementById("pages").value;
+  let readStatus = document.getElementById("read-status").value;
+
+  const newBook = new Book(title, author, pages, readStatus);
+  console.log(newBook);
+
+  // myLibrary.push(book);
 }
 
 
-// Bring form up when add book button is pressed
+// Bring form up when add new book button is pressed
 let newBookButton = document.querySelector("#add-button");
 newBookButton.addEventListener('click', function() {
   let newBookForm = document.querySelector("#book-form");
   newBookForm.style.display = "block";
 })
 
+// Form's add book button
+document.querySelector("#book-form").addEventListener("submit", function() {
+  event.preventDefault();
+  addBookToLibrary();
+})
 
 
-
-
-
+// Form's cancel button
 
 
 // Sample books - currently 3 books in the library w/o user input
