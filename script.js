@@ -20,10 +20,26 @@ function addBookToLibrary(title, author, pages, readStatus) {
   myLibrary.push(book);
 }
 
+
+// Bring form up when add book button is pressed
+let newBookButton = document.querySelector("#add-button");
+newBookButton.addEventListener('click', function() {
+  let newBookForm = document.querySelector("#book-form");
+  newBookForm.style.display = "block";
+})
+
+
+
+
+
+
+
+
 // Sample books - currently 3 books in the library w/o user input
 addBookToLibrary('Cats', 'Me', 192, 'read');
 addBookToLibrary('Cats', 'Me', 1922, 'read');
 addBookToLibrary('Cats', 'Me', 1923, 'read');
+addBookToLibrary('Cats', 'Me', 19233, 'read');
 console.log(myLibrary.length);
 
 // Function that loops through array and displays each book on the page
