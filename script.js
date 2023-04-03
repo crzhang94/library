@@ -51,7 +51,18 @@ function displayBooks() {
         <div class = "card-author">${book.author}</div>
         <div class = "card-pages">${book.pages} pages</div>
         <div class = "card-read-status">${book.readStatus}</div>
+
+        <button class ="remove-book" onclick ="removeBook(${i})">Remove</button>
         `;
       bookshelf.appendChild(bookCard);
   }
 }
+
+function removeBook(i) {
+  myLibrary.splice(i, 1)
+  displayBooks();
+}
+
+
+// TO DO
+// Fix bug where cancelling out of the form saves a blank book
