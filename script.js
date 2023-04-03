@@ -43,6 +43,11 @@ document.querySelector("#book-form").addEventListener("submit", function() {
 
 
 // Form's cancel button
+document.getElementById("cancel").addEventListener("click", function () {
+  let newBookForm = document.querySelector("#book-form");
+  newBookForm.style.display = "none";
+  newBookForm.reset();
+})
 
 
 // Sample books - currently 3 books in the library w/o user input
