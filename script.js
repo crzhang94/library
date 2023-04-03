@@ -1,19 +1,19 @@
 let myLibrary = [];
 
-function Book(title, author, pages, readStatus) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.readStatus = readStatus;
+    this.read = read;
 }
 
 function addBookToLibrary() {
   let title = document.getElementById("title").value;
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
-  let readStatus = document.getElementById("read-status").value;
+  let read = document.getElementById("read").value;
 
-  const newBook = new Book(title, author, pages, readStatus);
+  const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
   
   displayBooks();
@@ -27,13 +27,19 @@ newBookButton.addEventListener('click', function() {
 })
 
 // Form: add book button
-document.querySelector("#book-form").addEventListener("submit", function() {
+let newBookForm = document.querySelector("#book-form");
+let addBook = document.getElementById("add-book");
+addBook.addEventListener("click", function(event) {
   event.preventDefault();
   addBookToLibrary();
+  newBookForm.style.display = "none";
+  newBookForm.reset(); 
 })
 
+
 // Form: cancel button
-document.getElementById("cancel").addEventListener("click", function () {
+document.getElementById("cancel").addEventListener("click", function (event) {
+  event.preventDefault();
   let newBookForm = document.querySelector("#book-form");
   newBookForm.style.display = "none";
   newBookForm.reset();
@@ -50,9 +56,10 @@ function displayBooks() {
         <div class = "card-title"><b>${book.title}</b></div>
         <div class = "card-author">${book.author}</div>
         <div class = "card-pages">${book.pages} pages</div>
-        <div class = "card-read-status">${book.readStatus}</div>
+        <div class = "card-read">${book.read}</div>
 
         <button class ="remove-book" onclick ="removeBook(${i})">Remove</button>
+        <button class ="toggle-read" onclick ="toggleRead(${i})">Toggle Read</button>
         `;
       bookshelf.appendChild(bookCard);
   }
@@ -63,6 +70,21 @@ function removeBook(i) {
   displayBooks();
 }
 
+Book.prototype.toggleRead = function() {
+  if (this.read = "Read") {
+    this.read = "Not read yet";
+  }
+  else {
+    this.read = "Read";
+  }
+}
+
+function toggleRead(i) {
+  myLibrary[i].toggleRead();
+  displayBooks();
+}
 
 // TO DO
-// Fix bug where cancelling out of the form saves a blank book
+// Fix toggle from not read to read
+// Fix form being a sticky
+// Fix header position
